@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Careers</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-2 mb-4">
+            {{company_name}} Careers
+        </h1>
+        <img src="/static/1703611617378.jpg" alt="potential leaders of tomorrow" id="banner" class="img-fluid">
+        <h2 class="text-center">
+            About Enoch Careers</h2>
+        <p class="lead">
+            Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Doloremque alias quidem aliquid 
+            dignissimos harum commodi suscipit. Impedit esse 
+            consequatur aut amet eligendi tempore facere? 
+            Soluta vitae fugit facilis assumenda doloribus?
+        </p>
+        <h2 class="text-center  mt-2 mb-4">
+            Open Positions
+        </h2  mt-2 mb-4>
+        <div>
+            {% for job in jobs %}
+               {% include 'jobitem.html' %} 
+            {% endfor %}
+            </div>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg">Contact Us</button>
+            <p class="mt-4">Copyright 2024, Enoch</p>
+        </div>
+    </div>
+</body>
+</html>
