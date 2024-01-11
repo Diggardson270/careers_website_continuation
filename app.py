@@ -23,8 +23,14 @@ JOBS = [
         'salary' : 'N 10,000,000'
     },
     {
-      'id' : 3,
+      'id' : 4,
         'title' : 'Project Manager',
+        'location' : 'Lagos, Nigeria',
+        'salary' : 'N 4,000,000'  
+    },
+    {
+      'id' : 5,
+        'title' : 'UI/UX Designer',
         'location' : 'Lagos, Nigeria',
         'salary' : 'N 4,000,000'  
     }
