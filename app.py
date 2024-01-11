@@ -21,6 +21,12 @@ JOBS = [
         'title' : 'Chief of Operations',
         'location' : 'Abuja, Nigeria',
         'salary' : 'N 10,000,000'
+    },
+    {
+      'id' : 3,
+        'title' : 'Project Manager',
+        'location' : 'Lagos, Nigeria',
+        'salary' : 'N 4,000,000'  
     }
 ]
 
