@@ -1,19 +1,24 @@
 from sqlalchemy import create_engine, text
+import json
+from flask import Flask
 
-hostname = "127.0.0.1"
-username = "root"
-password = "12345"
-port = 3307
-database = "enochcareers"
+with open('config.json', 'r') as f:
+    config = json.load(f)
 
-engine = create_engine('mysql+pymysql://' +username+':'+password+'@'+hostname+':'+str(port)+'/'+database)
+
+config['dab_connection_string'] = f"mysql+pymysql://{config['username']}:{config['password']}@{config['hostname']}:{config['port']}/{config['database']}"
+
+engine = create_engine(config['dab_connection_string'])
 
 def load_jobs_from_db():
     with engine.connect() as conn:
         result = conn.execute(text("select * from jobs"))
         jobs = []
         for row in result.all():
-            jobs.append((row._mapping))
+            row = row._mapping
+            row = dict(row)
+            jobs.append((row))
+            json_data = json.dumps(row)
         return jobs
     
     
