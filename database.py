@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, text
 import json
 from flask import Flask
+import os
 
 with open('config.json', 'r') as f:
     config = json.load(f)
